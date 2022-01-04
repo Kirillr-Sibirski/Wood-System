@@ -322,8 +322,11 @@ namespace NeptuneEvo.Jobs
                 Trigger.ClientEvent(player, "deleteCheckpoint", 15);
                 Trigger.ClientEvent(player, "deleteWorkBlip");
                 NAPI.Data.SetEntityData(player, "WaitSawmill", false);
-                Occupation[player.GetData<int>("WORKCHECK")] = false;
-                OccupationWW[player.GetData<int>("WORKCHECK")] = false;
+                if (NAPI.Data.GetEntityData(player, "WORKCHECK") > -1)
+                {
+                    Occupation[player.GetData<int>("WORKCHECK")] = false;
+                    OccupationWW[player.GetData<int>("WORKCHECK")] = false;
+                }
             }
         }
 
@@ -509,8 +512,11 @@ namespace NeptuneEvo.Jobs
                     Trigger.ClientEvent(player, "deleteWorkBlip");
                     Trigger.ClientEventInRange(player.Position, 550, "DestroyObjectLoader", player);
                     NAPI.Data.SetEntityData(player, "WaitSawmill", false);
-                    Occupation[player.GetData<int>("WORKCHECK")] = false;
-                    OccupationWW[player.GetData<int>("WORKCHECK")] = false;
+                    if (NAPI.Data.GetEntityData(player, "WORKCHECK") > -1)
+                    {
+                        Occupation[player.GetData<int>("WORKCHECK")] = false;
+                        OccupationWW[player.GetData<int>("WORKCHECK")] = false;
+                    }
                     player.SetData("WORKCHECK", -1);
                     player.SetData("PACKAGES", 0);
                     BasicSync.DetachObject(player);
@@ -800,7 +806,10 @@ namespace NeptuneEvo.Jobs
                         {   
                             Trigger.ClientEventInRange(player.Position, 550, "AttachObjectLoader", player);
                             Trigger.ClientEventInRange(player.Position, 550, "SetLoaderMass", player, 15000);
-                            Occupation[player.GetData<int>("WORKCHECK")] = false;
+                            if (NAPI.Data.GetEntityData(player, "WORKCHECK") > -1)
+                            {
+                                Occupation[player.GetData<int>("WORKCHECK")] = false;
+                            }
 
 
                             Notify.Send(player, NotifyType.Success, NotifyPosition.BottomCenter, $"Отвезите доски на склад. Нажмите NUM8 или NUM5 на клавиатуре, чтобы поднять или опустить доски.", 1500);
@@ -879,7 +888,10 @@ namespace NeptuneEvo.Jobs
             {
                 check = WorkManager.rnd.Next(0, Checkpoint1[2].Count - 1);
             }
-            OccupationWW[player.GetData<int>("WORKCHECK")] = false;
+            if (NAPI.Data.GetEntityData(player, "WORKCHECK") > -1)
+            {
+                OccupationWW[player.GetData<int>("WORKCHECK")] = false;
+            }
             player.SetData("WORKCHECK", -1);
             Main.OnAntiAnim(player);
             player.PlayAnimation("missheistfbi_fire", "break_door_a", 47); //cutting wood animation 
@@ -1113,8 +1125,11 @@ namespace NeptuneEvo.Jobs
                         Trigger.ClientEvent(player, "deleteWorkBlip");
                         Trigger.ClientEventInRange(player.Position, 550, "DestroyObjectLoader", player);
                         NAPI.Data.SetEntityData(player, "WaitSawmill", false);
-                        Occupation[player.GetData<int>("WORKCHECK")] = false;
-                        OccupationWW[player.GetData<int>("WORKCHECK")] = false;
+                        if (NAPI.Data.GetEntityData(player, "WORKCHECK") > -1)
+                        {
+                            Occupation[player.GetData<int>("WORKCHECK")] = false;
+                            OccupationWW[player.GetData<int>("WORKCHECK")] = false;
+                        }
                         player.SetData("WORKCHECK", -1);
                         Trigger.ClientEvent(player, "CloseJobStatsInfoW", player.GetData<int>("PAYMENT"));
                         NAPI.Data.SetEntityData(player, "INSTRUMENT", 0);
@@ -1156,8 +1171,11 @@ namespace NeptuneEvo.Jobs
                     Trigger.ClientEvent(player, "deleteWorkBlip");
                     Trigger.ClientEventInRange(player.Position, 550, "DestroyObjectLoader", player);
                     NAPI.Data.SetEntityData(player, "WaitSawmill", false);
-                    Occupation[player.GetData<int>("WORKCHECK")] = false;
-                    OccupationWW[player.GetData<int>("WORKCHECK")] = false;
+                    if (NAPI.Data.GetEntityData(player, "WORKCHECK") > -1)
+                    {
+                        Occupation[player.GetData<int>("WORKCHECK")] = false;
+                        OccupationWW[player.GetData<int>("WORKCHECK")] = false;
+                    }
                     player.SetData("WORKCHECK", -1);
                     player.SetData("PACKAGES", 0);
                     player.SetData("INSTRUMENT", 0);
@@ -1192,8 +1210,11 @@ namespace NeptuneEvo.Jobs
                     Trigger.ClientEvent(player, "deleteWorkBlip");
                     Trigger.ClientEventInRange(player.Position, 550, "DestroyObjectLoader", player);
                     NAPI.Data.SetEntityData(player, "WaitSawmill", false);
-                    Occupation[player.GetData<int>("WORKCHECK")] = false;
-                    OccupationWW[player.GetData<int>("WORKCHECK")] = false;
+                    if (NAPI.Data.GetEntityData(player, "WORKCHECK") > -1)
+                    {
+                        Occupation[player.GetData<int>("WORKCHECK")] = false;
+                        OccupationWW[player.GetData<int>("WORKCHECK")] = false;
+                    }
                     player.SetData("WORKCHECK", -1);
                     player.SetData("PACKAGES", 0);
                     player.SetData("INSTRUMENT", 0);
