@@ -196,7 +196,7 @@ namespace NeptuneEvo.Jobs
                 if (NAPI.Data.GetEntityData(player, "ON_WORK") != false)
                 {
                     Customization.ApplyCharacter(player);
-                    Main.Players[player].WorkID = 0;
+                    //Main.Players[player].WorkID = 0;
                     player.SetData("ON_WORK", false);
                     player.SetData("ON_WORK2", 0);
                     player.SetData("PLAYER_WORKING", 0);
