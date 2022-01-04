@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Wood system</title>
+    <style>
+        body {
+            user-select: none;
+            -moz-user-select: none;
+            -webkit-user-select: none;
+            font-family: "Ubuntu", sans-serif;
+            margin: 0;
+        }
+
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #555;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #ddd;
+        }
+    </style>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu:400,700&amp;subset=cyrillic" rel="stylesheet">
+    <link rel="stylesheet" href="css/WoodsMenus.css">
+    <link rel="stylesheet" href="css/fmenu.css">
+    <link rel="stylesheet" href="fonts/icons.css">
+    <script src="js/vue.js"></script>
+</head>
+<body style="display:none">
+    <div class="JobStatsInfoW" v-if="active" style="font-weight: 900;box-shadow: 0 0px 20px rgb(0 0 0 / 43%);border-right: 5px solid #fbb80499;top: 420px;right: 40px;color: white;background: #00000082;width: 200px;position: absolute;">
+        <!--<div style="font-size: 18px;text-align: center;padding: 8px 0px 10px 0px;background: black;">Статистика</div>-->
+        <div style="text-align: left;padding: 10px;">
+            <p style="margin:0px;">Заработано: {{money}}$</p>
+        </div>
+    </div>
+
+    <!-- Склад -->
+<div class="Warehouse" v-if="active">
+ <div class="header"><h1>{{header}}</h1><span class="cancel" @click="exit"></span></div>
+    <div class="block">
+        <div class="left">Лопата</div>
+        <div class="right"><div class="btn" v-on:click="takeObject(1)">Взять</div></div>
+    </div>
+    <div class="block">
+        <div class="left">Пила</div>
+        <div class="right"><div class="btn" v-on:click="takeObject(2)">Взять</div></div>
+    </div>
+    <div class="block">
+        <div class="left">Ключи</div>
+        <div class="right"><div class="btn" v-on:click="takeObject(3)">Взять</div></div>
+    </div>
+    <div class="putObject" v-on:click="takeObject(-1)">Положить предмет</div>
+</div>
+
+<!-- Лесообработка -->
+<div class="Sawmill" v-if="active">
+    <div class="content">
+                <div class="block">
+ <div class="header"><h1>{{header}}</h1><i class="cancel" @click="exit"></i></div>
+    <table>
+      <tr> <!-- Таскание опилок -->
+        <td><div class="imgblock"><img src="./images/content/sawdust.png" alt=""></div></td>
+                <td class="info" >Таскание опилок. Самый первый этап работы на лесообработке. Начните работу, возьмите нужный инструмент и перетаскивайте опилки из одного места в другое! Думаете что это слишком просто и не интересно? Не забывайте, это только начало карьеры!</td>
+                <td>
+                    <div v-if="work == 1" style="margin-top: 8px;width:100%;">
+                        <div class="enterSawmill" v-on:click="enterJob(-1)">Закончить работу</div>
+                    </div>
+                    <div v-else style="margin-top: 8px;width:100%;">
+                        <div class="enterSawmill" v-on:click="enterJob(1)">Начать работу</div>
+                    </div>
+                </td>
+                
+
+
+      </tr>
+      <tr> <!-- Обработка дерева -->
+        <td><div class="imgblock"><img src="./images/content/woodworker.png" alt=""></div></td>
+        <td class="info">Обработка дерева. Второй этап работы на лесообработке.Начните работу, возьмите нужный инструмент и обрабатывайте деревья на определенных точках!</td>
+        <td>
+            <div v-if="work == 2" style="margin-top: 8px;width:100%;">
+                <div class="enterSawmill" v-on:click="enterJob(-1)">Закончить работу</div>
+            </div>
+            <div v-else style="margin-top: 8px;width:100%;">
+                <div class="enterSawmill" v-on:click="enterJob(2)">Начать работу</div>
+            </div>
+        </td>
+       
+
+      </tr>
+      <tr> <!-- Перевозка досок на погрзчике -->
+        <td><div class="imgblock"><img src="./images/content/loader.png" alt=""></div></td>
+        <td class="info">Перевозка досок на погрузчике. Третий этап работы на лесообработке. Начните работу, возьмите погрузчик и перевозите доски!</td>
+        <td>
+            <div v-if="work == 3" style="margin-top: 8px;width:100%;">
+                <div class="enterSawmill" v-on:click="enterJob(-1)">Закончить работу</div>
+            </div>
+            <div v-else style="margin-top: 8px;width:100%;">
+                <div class="enterSawmill" v-on:click="enterJob(3)">Начать работу</div>
+            </div>
+        </td>
+        
+
+      </tr>
+    </table>
+    </div>
+</div>
+</div>
+
+    <!-- Лесоруб -->
+    <div class="Lumberjack" v-if="active">
+        <div class="header"><h1>{{header}}</h1><i class="cancel" @click="exit"></i></div>
+        <div class="content">
+            <div class="block">
+                <div class="left">
+                    <div class="imgblock"><img src="./images/content/lumberjack.png" alt=""></div>
+                </div>
+                <div class="right">
+                    <p class="info">Простая подработка для всех новичков. Начинай работу и просто пили деревья в определенных точках, которые будт обозначены на карте.</p>
+                    <p class="price">Зарплата: {{money}}$</p>
+                </div>
+            </div>
+            <div v-if="work == 1" style="margin-top: 8px;width:45%;float:left;">
+                <div class="enterLumberjack" v-on:click="enterJob(-1)">Закончить работу</div>
+            </div>
+            <div v-else style="margin-top: 8px;width:45%;float:left;">
+                <div class="enterLumberjack" v-on:click="enterJob(1)">Начать работу</div>
+            </div>
+        </div>
+    </div>
+
+        <!-- Мини игра, лесоруб -->
+<div class="GameLumber" v-if="active">
+    <div class="content">
+    <div class="block" id="block">
+        <div class="block__title">Рубка дерева.</div>
+        <div class="progress__bar" id="pr__bar" ></div>
+        <div class="btn" id="btn">
+            <div class="btn__title">Удар</div>
+        </div>
+    </div>
+</div>
+</div>
+<!-- Мини игра, лесообработчик -->
+<div class="GameWW" v-if="active">
+    <div class="content">
+    <div class="block" id="block">
+        <div class="block__title">Обработка дерева.</div>
+        <div class="progress__bar" id="pr__bar" ></div>
+        <div class="btn" id="btn">
+            <div class="btn__title">Обработать</div>
+        </div>
+    </div>
+</div>
+</div>
+
+
+    <script src="js/jquery-3.2.1.min.js"></script>
+    <script src="js/dial.js"></script>
+    <script src="js/WoodsMenus.js"></script>
+</body>
+</html>

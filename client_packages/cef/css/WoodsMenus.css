@@ -1,0 +1,572 @@
+
+.Sawmill {
+    box-shadow: 0 0px 50px rgb(0 0 0 / 30%);
+    border-left: 5px solid #fbb80499;
+    position: absolute;
+    width: 1470px;
+    height: 1400px;
+    background-color: #545454;
+    left: 25%;
+    margin-right: -270px;
+    margin-left: -270px;
+    top: 50%;
+    margin-top: -275px;
+    max-height: 550px;
+    overflow: hidden;
+}
+
+    .Sawmill .header {
+        height: 70px;
+        width: 100%;
+        color: white;
+        border-radius: 0px 5px 0px 0px;
+        font-weight: 900;
+        background: #000000;
+        font-size: 20px;
+        margin: 0px;
+        font-family: 'Montserrat', sans-serif;
+    }
+
+    .Sawmill .content {
+        padding: 5px;
+        margin: 10px;
+        color: white;
+    }
+
+        .Sawmill .content p {
+            margin: 0;
+            margin-bottom: 8px;
+        }
+
+    .Sawmill .buttons {
+          background-color: grey;
+          border: none;
+          color: white;
+          padding: 5px;
+          text-align: center;
+          text-decoration: none;
+          display: inline-block;
+          font-size: 15px;
+    }
+
+    .Sawmill .block {
+        height: 500px;
+        overflow: hidden;
+        overflow-y: scroll;
+    }
+
+    .Sawmill .header i {
+        padding: 15px;
+        float: right;
+        font-family: icons;
+        font-size: 16pt;
+        margin: 10px;
+        cursor: pointer;
+        font-style: normal;
+    }
+
+    .Sawmill .header h1 {
+        padding: 15px;
+        margin: 0px;
+        width: 100%;
+        float: left;
+    }
+
+    .Sawmill .left {
+        float: left;
+    }
+
+    .Sawmill .right {
+        float: right;
+        width: 310px;
+    }
+
+    .Sawmill .imgblock {
+        box-shadow: 0 0 10px rgb(0 0 0 / 9%);
+    }
+
+    .Sawmill img {
+        width: 100%;
+        width: 350px;
+    }
+
+    .Sawmill .enterSawmill {
+        cursor: pointer;
+        margin-top: 5px;
+        box-shadow: 0 0 10px rgb(0 0 0 / 11%);
+        background: #3a3a3ab8;
+        font-size: 27px;
+        font-weight: 900;
+        text-align: center;
+        width: 100%;
+        border-radius: 5px;
+        padding-top: 3px;
+        padding-bottom: 4px;
+    }
+
+        .Sawmill .enterSawmill:hover {
+            box-shadow: 0 0 10px rgb(0 0 0 / 24%);
+            background: #292828;
+        }
+
+    .Sawmill .info {
+        font-size: 25px;
+        font-weight: 900;
+        padding-right: 5px;
+        padding-left: 5px;
+    }
+
+.Warehouse{
+    position: absolute;
+    width: 350px;
+    height: 300px;
+    border-radius: 15px;
+    background-color: #e0e0e0;
+    top: 50%;
+    margin-top: -250px;
+}
+.Warehouse .header {
+    height: 50px;
+    width: 100%;
+    color: white;
+    font-weight: 900;
+    background: red;
+    font-size: 20px;
+    margin: 0px;
+    border-radius: 8px;
+    font-family: 'Montserrat', sans-serif;
+    display: flex;
+  	align-items: center;
+	justify-content: space-between; 
+}
+.Warehouse .header span {
+    font-family: icons;
+    font-size: 16pt;
+    margin: 10px;
+    cursor: pointer;
+    font-style: normal;
+}
+
+.Warehouse h1{
+    margin: 0;
+    padding: 15px;
+    font-weight: 400;
+    font-size: 18pt;
+    color: white;
+    text-align: center;
+    text-transform: uppercase;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+}
+
+.Warehouse .block{
+    display: flow-root;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 5px;
+    padding-right: 15px;
+    font-size: 12pt;
+    border-bottom: 1px solid black;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+.Warehouse .left{
+    float: left;
+}
+.Warehouse.right{
+    float: right;
+}
+
+.Warehouse .btn{
+    text-align: center;
+    color: white;
+    border-radius: 8px;
+    width: 120%;
+    cursor: pointer;
+    background-color: red;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14pt;
+    font-weight: 400;
+}
+.Warehouse .btn:hover{
+	background-color: #007bbb;
+}
+.Warehouse .putObject{
+	width: 100%;
+	height: 50px;
+    text-align: center;
+    color: white;
+    background-color: red;
+    font-weight: 400;
+    margin: auto;
+    border-radius: 8px;
+    font-family: 'Montserrat', sans-serif;
+    text-transform: uppercase;
+    position: absolute;
+  	bottom: 0px;
+  	vertical-align: middle;
+	line-height: 50px;    
+}
+.Warehouse .putObject:hover {
+	background-color: #007bbb;
+}
+
+
+.Lumberjack {
+    box-shadow: 0 0px 50px rgb(0 0 0 / 30%);
+    border-left: 5px solid #fbb80499;
+    position: absolute;
+    width: 770px;
+    height: 400px;
+    background-color: #545454;
+    left: 50%;
+    margin-left: -385px;
+    top: 50%;
+    margin-top: -275px;
+    max-height: 550px;
+    overflow: hidden;
+}
+
+    .Lumberjack .header {
+        height: 70px;
+        width: 100%;
+        color: white;
+        border-radius: 0px 5px 0px 0px;
+        font-weight: 900;
+        background: #000000;
+        font-size: 20px;
+        margin: 0px;
+        font-family: 'Montserrat', sans-serif;
+    }
+
+    .Lumberjack .content {
+        padding: 5px;
+        margin: 10px;
+        color: white;
+    }
+
+        .Lumberjack .content p {
+            margin: 0;
+            margin-bottom: 8px;
+        }
+
+    .Lumberjack .buttons {
+        padding: 5px;
+        background-color: white; 
+        border-radius: 12px;
+        color: black;
+        border: 2px solid #4CAF50; 
+    }
+
+    .Lumberjack .button:hover {
+    padding: 5px
+    background-color: #4CAF50; /* Green */
+    color: white;
+    border-radius: 12px;
+    border: 2px solid #FFFFFF; 
+    }
+
+    .Lumberjack .block {
+        height: 250px;
+        overflow: hidden;
+        overflow-y: scroll;
+    }
+
+    .Lumberjack .header i {
+        padding: 15px;
+        float: right;
+        font-family: icons;
+        font-size: 16pt;
+        margin: 10px;
+        cursor: pointer;
+        font-style: normal;
+    }
+
+    .Lumberjack .header h1 {
+        padding: 15px;
+        margin: 0px;
+        width: 100%;
+        float: left;
+    }
+
+    .Lumberjack .left {
+        float: left;
+    }
+
+    .Lumberjack .right {
+        float: right;
+        width: 310px;
+    }
+
+    .Lumberjack .imgblock {
+        box-shadow: 0 0 10px rgb(0 0 0 / 9%);
+        float: left;
+    }
+
+    .Lumberjack img {
+        width: 100%;
+        width: 350px;
+    }
+
+    .Lumberjack .enterLumberjack {
+        cursor: pointer;
+        margin-top: 5px;
+        box-shadow: 0 0 10px rgb(0 0 0 / 11%);
+        background: #3a3a3ab8;
+        font-size: 27px;
+        font-weight: 900;
+        text-align: center;
+        width: 100%;
+        border-radius: 5px;
+        padding-top: 3px;
+        padding-bottom: 4px;
+    }
+
+        .Lumberjack .enterLumberjack:hover {
+            box-shadow: 0 0 10px rgb(0 0 0 / 24%);
+            background: #292828;
+        }
+
+    .Lumberjack .info {
+        font-size: 20px;
+        font-weight: 900;
+    }
+
+    .Lumberjack .price {
+        color: #ffbe0e;
+        font-size: 30px;
+        font-weight: 900;
+    }
+.GameLumber .content {
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.GameLumber .block {
+    position: absolute;
+    width: 400px;
+    height: 150px;
+    z-index: -1;
+    right: 763px;
+    top: 70%;
+    border-radius: 10px;
+    background-color: rgb(48, 48, 48);
+}
+
+.GameLumber .progress__bar {
+    margin-top: 15%;
+    margin-left: 45px;
+    height: 20px;
+    max-width: 300px;
+    width: 0px;
+    background-color: rgb(66, 156, 172);
+    box-shadow: 0 0 10px #2187e7b3;
+    border: 1px solid rgb(66, 156, 172);
+    border-radius: 10px;
+}
+
+.GameLumber .btn {
+    background-color: rgb(91, 185, 119);
+    width: 80px;
+    height: 30px;
+    margin: 0 auto;
+    margin-top: 20px;
+    border-radius: 10px;
+    color: #FFFFFF;
+}
+
+.GameLumber .btn:hover {
+    box-shadow: 0 0 5px rgb(91, 185, 119);
+    cursor: crosshair;
+}
+
+.GameLumber .block__title {
+    position: absolute;
+    right: 120px;
+    top: 20px;
+    position: absolute;
+    color: white;
+    font-weight: bolder;
+}
+
+.GameLumber .btn__title {
+    font-size: small;
+    text-align: center;
+    padding-top: 5px;
+}
+
+
+.GameLumber .content {
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.GameLumber .block {
+    position: absolute;
+    width: 400px;
+    height: 150px;
+    z-index: -1;
+    right: 763px;
+    top: 70%;
+    border-radius: 10px;
+    background-color: rgb(48, 48, 48);
+}
+
+.GameLumber .progress__bar {
+    margin-top: 15%;
+    margin-left: 45px;
+    height: 20px;
+    max-width: 300px;
+    width: 0px;
+    background-color: rgb(66, 156, 172);
+    box-shadow: 0 0 10px #2187e7b3;
+    border: 1px solid rgb(66, 156, 172);
+    border-radius: 10px;
+}
+
+.GameLumber .btn {
+    background-color: rgb(91, 185, 119);
+    width: 80px;
+    height: 30px;
+    margin: 0 auto;
+    margin-top: 20px;
+    border-radius: 10px;
+}
+
+.GameLumber .btn:hover {
+    box-shadow: 0 0 5px rgb(91, 185, 119);
+    cursor: crosshair;
+}
+
+.GameLumber .block__title {
+    position: absolute;
+    right: 120px;
+    top: 20px;
+    position: absolute;
+    color: white;
+    font-weight: bolder;
+}
+
+.GameLumber .btn__title {
+    font-size: small;
+    text-align: center;
+    padding-top: 5px;
+}
+
+
+.GameWW .content {
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.GameWW .block {
+    position: absolute;
+    width: 400px;
+    height: 150px;
+    z-index: -1;
+    right: 763px;
+    top: 70%;
+    border-radius: 10px;
+    background-color: rgb(48, 48, 48);
+}
+
+.GameWW .progress__bar {
+    margin-top: 15%;
+    margin-left: 45px;
+    height: 20px;
+    max-width: 300px;
+    width: 0px;
+    background-color: rgb(66, 156, 172);
+    box-shadow: 0 0 10px #2187e7b3;
+    border: 1px solid rgb(66, 156, 172);
+    border-radius: 10px;
+}
+
+.GameWW .btn {
+    background-color: rgb(91, 185, 119);
+    width: 80px;
+    height: 30px;
+    margin: 0 auto;
+    margin-top: 20px;
+    border-radius: 10px;
+    color: #FFFFFF;
+}
+
+.GameWW .btn:hover {
+    box-shadow: 0 0 5px rgb(91, 185, 119);
+    cursor: crosshair;
+}
+
+.GameWW .block__title {
+    position: absolute;
+    right: 120px;
+    top: 20px;
+    position: absolute;
+    color: white;
+    font-weight: bolder;
+}
+
+.GameWW .btn__title {
+    font-size: small;
+    text-align: center;
+    padding-top: 5px;
+}
+
+
+.GameWW .content {
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.GameWW .block {
+    position: absolute;
+    width: 400px;
+    height: 150px;
+    z-index: -1;
+    right: 763px;
+    top: 70%;
+    border-radius: 10px;
+    background-color: rgb(48, 48, 48);
+}
+
+.GameWW .progress__bar {
+    margin-top: 15%;
+    margin-left: 45px;
+    height: 20px;
+    max-width: 300px;
+    width: 0px;
+    background-color: rgb(66, 156, 172);
+    box-shadow: 0 0 10px #2187e7b3;
+    border: 1px solid rgb(66, 156, 172);
+    border-radius: 10px;
+}
+
+.GameWW .btn {
+    background-color: rgb(91, 185, 119);
+    width: 80px;
+    height: 30px;
+    margin: 0 auto;
+    margin-top: 20px;
+    border-radius: 10px;
+}
+
+.GameWW .btn:hover {
+    box-shadow: 0 0 5px rgb(91, 185, 119);
+    cursor: crosshair;
+}
+
+.GameWW .block__title {
+    position: absolute;
+    right: 120px;
+    top: 20px;
+    position: absolute;
+    color: white;
+    font-weight: bolder;
+}
+
+.GameWW .btn__title {
+    font-size: small;
+    text-align: center;
+    padding-top: 5px;
+}
