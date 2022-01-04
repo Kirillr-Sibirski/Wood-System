@@ -263,10 +263,10 @@ namespace NeptuneEvo.Jobs
                             Core.VehicleStreaming.SetEngineState(vehicle, true);
                             NAPI.Data.SetEntityData(vehicle, "DRIVER", player);
 
-                            var rnd = WorkManager.rnd.Next(0, Checkpoints1.Count - 1); //Trailers
+                            /*var rnd = WorkManager.rnd.Next(0, Checkpoints1.Count - 1); //Trailers
                             Trigger.ClientEvent(player, "createCheckpoint", 3, 1, Checkpoints1[rnd].Position, 5, 0, 255, 0, 0);
                             Trigger.ClientEvent(player, "createWaypoint", Checkpoints1[rnd].Position.X, Checkpoints1[rnd].Position.Y);
-                            Trigger.ClientEvent(player, "createWorkBlip", Checkpoints1[rnd].Position);
+                            Trigger.ClientEvent(player, "createWorkBlip", Checkpoints1[rnd].Position);*/
                             NAPI.Data.SetEntityData(player, "IN_WORK_CAR", true);
                         }
                     }
@@ -363,6 +363,9 @@ namespace NeptuneEvo.Jobs
             veh.SetSharedData("PETROL", VehicleManager.VehicleTank[veh.Class]);
             NAPI.Data.SetEntityData(player, "WORK", veh);
             NAPI.Data.SetEntityData(player, "WORKCHECK", 0);
+            Trigger.ClientEvent(player, "createCheckpoint", 3, 1, Checkpoints1[rnd].Position, 5, 0, 255, 0, 0);
+            Trigger.ClientEvent(player, "createWaypoint", Checkpoints1[rnd].Position.X, Checkpoints1[rnd].Position.Y);
+            Trigger.ClientEvent(player, "createWorkBlip", Checkpoints1[rnd].Position);
             Notify.Send(player, NotifyType.Info, NotifyPosition.BottomCenter, $"Вы арендовали лесовоз.", 3000);
         }
         #endregion
