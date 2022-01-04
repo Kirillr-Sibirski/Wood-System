@@ -513,6 +513,7 @@ namespace NeptuneEvo.Jobs
                     OccupationWW[player.GetData<int>("WORKCHECK")] = false;
                     player.SetData("WORKCHECK", -1);
                     player.SetData("PACKAGES", 0);
+                    BasicSync.DetachObject(player);
 
                     MoneySystem.Wallet.Change(player, player.GetData<int>("PAYMENT"));
                     Notify.Send(player, NotifyType.Info, NotifyPosition.BottomCenter, $"Вы закончили рабочий день.", 3000);
